@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Digital Studios, L.L.C. — Apps & Games Built Different</title>
+  <meta name="description" content="Guardian Digital Studios is a Gaithersburg, MD-based startup building innovative phone apps and video games — powerful solutions at a fraction of the cost.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="logo">
+        <div class="logo-icon"><img src="images/logo.jpg" alt="Guardian Digital Studios logo"></div>
+        <div class="logo-text">Guardian <span>Digital</span> Studios</div>
+      </a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero" onclick="closeMenu()">Home</a>
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#products" onclick="closeMenu()">Products</a>
+        <a href="#products" onclick="closeMenu()" class="nav-cta">Our Products</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Innovative apps &amp; games<br>at a <em>fraction of the cost</em></h1>
+      <p>Guardian Digital Studios is a startup studio creating phone apps that solve real problems and video games born from genuine passion — all without the premium price tag.</p>
+      <div class="hero-buttons">
+        <a href="#products" class="btn btn-primary">Explore Our Products &#8599;</a>
+        <a href="#about" class="btn btn-secondary">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid">
+        <div class="about-story reveal">
+          <div class="section-label">About Us</div>
+          <h2 class="section-title">Built on creativity,<br>driven by purpose</h2>
+          <p>Guardian Digital Studios, L.L.C. was founded in Gaithersburg, Maryland as a creative outlet with a dual mission: build innovative software solutions that tackle everyday problems at a price point that respects users, and develop engaging video games that started as ideas between friends.</p>
+          <p>We believe that great apps shouldn't require great expense. The leading tools in the market often charge a premium for features that should be accessible to everyone. Our approach is different — we build lean, focused products that deliver genuine value without unnecessary bloat or inflated pricing.</p>
+          <p>On the gaming side, we pursue the projects that excite us. Every game we develop starts from a spark of genuine enthusiasm — an idea pitched over dinner, a mechanic that keeps us up at night, a story we need to tell. That passion translates directly into the player experience.</p>
+        </div>
+        <div class="about-values reveal">
+          <div class="value-card">
+            <div class="value-icon">&#9881;&#65039;</div>
+            <h4>Innovative Solutions</h4>
+            <p>We approach problems from fresh angles, building apps that challenge the status quo of overpriced software.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">&#128176;</div>
+            <h4>Accessible Pricing</h4>
+            <p>Premium functionality doesn't require a premium price. We keep costs fair so more people can benefit.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">&#127918;</div>
+            <h4>Passion-Driven Games</h4>
+            <p>Every game starts with genuine excitement. We build what we'd want to play ourselves.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">&#128101;</div>
+            <h4>Community First</h4>
+            <p>We listen to our users and players, iterating based on real feedback to make every product better.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PRODUCTS ─── -->
+  <section id="products">
+    <div class="section-inner">
+      <div class="reveal">
+        <div class="section-label">Our Products</div>
+        <h2 class="section-title">What we're building</h2>
+        <p class="section-subtitle">From utility apps that simplify your day to games that keep you coming back — here's what Guardian Digital Studios has in the works.</p>
+      </div>
+      <div class="products-grid">
+        <div class="product-card reveal">
+          <div class="product-emoji">&#128241;</div>
+          <div class="product-tag">MOBILE APP</div>
+          <h3>Smart Utility Apps</h3>
+          <p>Productivity and utility apps designed to solve real, everyday problems. We study the pain points of leading apps and build streamlined alternatives at a fraction of the cost.</p>
+          <div class="product-features">
+            <span>iOS &amp; Android</span>
+            <span>Affordable</span>
+            <span>No Bloatware</span>
+            <span>Privacy-First</span>
+          </div>
+        </div>
+        <div class="product-card reveal">
+          <div class="product-emoji">&#127918;</div>
+          <div class="product-tag">VIDEO GAMES</div>
+          <h3>Indie Game Titles</h3>
+          <p>Original video games built from concepts we're personally passionate about. From narrative-driven experiences to creative gameplay mechanics, our titles are born from real enthusiasm and developed with care by our team.</p>
+          <div class="product-features">
+            <span>Original Concepts</span>
+            <span>Multi-Platform</span>
+            <span>Indie Spirit</span>
+            <span>Story-Driven</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#hero" class="logo" style="color:var(--slate-200);">
+            <div class="logo-icon"><img src="images/logo.jpg" alt="Guardian Digital Studios logo"></div>
+            <div class="logo-text" style="color:var(--slate-200);">Guardian <span style="color:var(--blue-400);">Digital</span> Studios</div>
+          </a>
+          <p>A Gaithersburg, MD startup building innovative apps and passion-driven games — accessible to everyone.</p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <a href="#hero">Home</a>
+          <a href="#about">About</a>
+          <a href="#products">Products</a>
+        </div>
+        <div class="footer-links">
+          <h4>Legal</h4>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Guardian Digital Studios, L.L.C. All rights reserved.</p>
+        <a href="#">Gaithersburg, Maryland</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
