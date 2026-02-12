@@ -210,18 +210,11 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
 .hero h1 em {
   font-style: normal;
   color: var(--blue-600);
-  position: relative;
-}
-.hero h1 em::after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--blue-400);
-  border-radius: 2px;
-  opacity: 0.5;
+  text-decoration: underline;
+  text-decoration-color: rgba(96, 165, 250, 0.5);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 3px;
+  text-decoration-skip-ink: none;
 }
 
 .hero p {
