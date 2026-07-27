@@ -374,6 +374,13 @@ section { padding: 100px 32px; }
   gap: 28px;
 }
 
+/* Only one product ships today; a lone card in a 2-col grid reads as a
+   missing sibling. Drop to one column until there is something to pair it with. */
+.products-grid.single {
+  grid-template-columns: 1fr;
+  max-width: 640px;
+}
+
 .product-card {
   background: var(--white);
   border: 1px solid var(--slate-200);
