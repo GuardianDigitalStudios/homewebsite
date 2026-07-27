@@ -7,7 +7,6 @@
   <meta name="description" content="Guardian Digital Studios is an independent software studio in Kensington, Maryland, and the maker of Commander Index, the free companion app for Magic: The Gathering Commander playgroups.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/transparent_logo.png">
   <link rel="apple-touch-icon" href="images/transparent_logo.png">
   <link rel="stylesheet" href="styles.css">
@@ -15,120 +14,129 @@
 <body>
 
   <!-- ─── NAVIGATION ─── -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="#hero" class="logo">
-        <div class="logo-icon"><img src="images/transparent_logo.png" alt="Guardian Digital Studios logo"></div>
-        <div class="logo-text">Guardian <span>Digital</span> Studios</div>
+  <nav>
+    <div class="in">
+      <a class="logo" href="#hero">
+        <img class="glyph" src="images/transparent_logo.png" alt="">
+        <span class="wm">Guardian Digital Studios</span>
       </a>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <button class="burger" type="button" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-links" id="navLinks">
-        <a href="#hero" onclick="closeMenu()">Home</a>
-        <a href="#about" onclick="closeMenu()">About</a>
-        <a href="#products" onclick="closeMenu()">Products</a>
-
-      </div>
+      <ul id="navLinks">
+        <li><a class="link" href="#hero" aria-current="page" onclick="closeMenu()">Home</a></li>
+        <li><a class="link" href="#about" onclick="closeMenu()">About</a></li>
+        <li><a class="link" href="#products" onclick="closeMenu()">Products</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- ─── HERO ─── -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>Apps for people <br>who <em>play games</em></h1>
+  <div class="page">
+
+    <!-- ─── HERO ─── -->
+    <div class="hero" id="hero">
+      <div class="rule">
+        <span class="eyebrow">Kensington, Maryland</span>
+        <span class="line"></span>
+      </div>
+      <h1>Apps for people who <em>play games</em></h1>
       <p>Guardian Digital Studios is an independent software studio in Kensington, Maryland. We build Commander Index, the companion app for Magic: The Gathering playgroups, free on iOS and Android.</p>
     </div>
-  </section>
 
-  <!-- ─── ABOUT ─── -->
-  <section id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-story reveal">
-          <div class="section-label">About Us</div>
-          <h2 class="section-title">Independent<br>by design</h2>
-          <p>Guardian Digital Studios is an independent software studio based in Kensington, Maryland. We design and build applications for people who play games — the tools that sit alongside a hobby and carry the parts of it worth keeping track of.</p>
-          <p>Our work starts from experience. Every product begins with a problem we have run into ourselves, so we know what the software has to get right before a line of it is written. That focus is deliberate: our applications do one job thoroughly rather than several of them loosely.</p>
-          <p>Commander Index is our flagship release, built for Magic: The Gathering Commander playgroups and free to everyone who uses it. It sets the standard we hold the rest of our work to.</p>
+    <!-- ─── ABOUT ─── -->
+    <section id="about">
+      <div class="head">
+        <p class="eyebrow">About us</p>
+        <h2>Independent<br>by design</h2>
+      </div>
+      <div class="prose">
+        <p>Guardian Digital Studios is an independent software studio based in Kensington, Maryland. We design and build applications for people who play games — the tools that sit alongside a hobby and carry the parts of it worth keeping track of.</p>
+        <p>Our work starts from experience. Every product begins with a problem we have run into ourselves, so we know what the software has to get right before a line of it is written. That focus is deliberate: <strong>our applications do one job thoroughly rather than several of them loosely.</strong></p>
+        <p>We are small on purpose. The studio stays independent so the decisions about what we build, and what we refuse to build, stay ours — no outside roadmap, no feature added because someone else needed it to be there.</p>
+      </div>
+      <div class="values">
+        <div class="value">
+          <span class="idx">01</span>
+          <h4>Built from experience</h4>
+          <p>Every product starts with a problem we have run into ourselves. We build the software we rely on, which is why it holds up in use.</p>
         </div>
-        <div class="about-values reveal">
-          <div class="value-card">
-            <div class="value-icon">&#127918;</div>
-            <h4>Built from experience</h4>
-            <p>Commander Index grew out of our own playgroup. We build the software we rely on, which is why it holds up in use.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">&#128176;</div>
-            <h4>Free, in full</h4>
-            <p>Every feature in Commander Index is available to everyone at no cost. Supporters remove the ads and unlock cosmetic options, and nothing functional sits behind a payment.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">&#9881;&#65039;</div>
-            <h4>Focused by design</h4>
-            <p>We commit fully to each product rather than spreading our attention across many. Every release is something we stand behind.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">&#9993;&#65039;</div>
-            <h4>Support that responds</h4>
-            <p>Write to hello@guardiandigitalstudios.com and someone on the team will answer. Every report gets read.</p>
-          </div>
+        <div class="value">
+          <span class="idx">02</span>
+          <h4>Free, in full</h4>
+          <p>Our apps are free and fully featured. Supporters remove the ads and unlock cosmetic options, and nothing functional sits behind a payment.</p>
+        </div>
+        <div class="value">
+          <span class="idx">03</span>
+          <h4>Focused by design</h4>
+          <p>We commit fully to each product rather than spreading our attention across many. Every release is something we stand behind.</p>
+        </div>
+        <div class="value">
+          <span class="idx">04</span>
+          <h4>Support that responds</h4>
+          <p>Write to <a href="mailto:hello@guardiandigitalstudios.com">hello@guardiandigitalstudios.com</a> and someone on the team will answer. Every report gets read.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ─── PRODUCTS ─── -->
-  <section id="products">
-    <div class="section-inner">
-      <div class="reveal">
-        <div class="section-label">Our Products</div>
-        <h2 class="section-title">What we make</h2>
-        <p class="section-subtitle">The software we build and maintain.</p>
+    <!-- ─── PRODUCTS ─── -->
+    <section id="products">
+      <div class="head">
+        <p class="eyebrow">Our products</p>
+        <h2>What we make</h2>
+        <p class="lede">The software we build and maintain.</p>
       </div>
-      <div class="products-grid single">
-        <div class="product-card reveal">
-          <div class="product-emoji">&#128241;</div>
-          <div class="product-tag">MOBILE APP</div>
+      <div class="product">
+        <div class="shot">
+          <img src="images/commander-index-app.png" width="190" height="413" alt="The Commander Index deck list, showing decks with their power tiers.">
+        </div>
+        <div class="pbody">
+          <p class="eyebrow">Mobile app</p>
           <h3>Commander Index</h3>
-          <p>The companion app for Magic: The Gathering Commander playgroups. Score deck power across twelve weighted categories, log matches the whole table confirms, track pod statistics, and keep life totals through a full game. Free on iOS and Android.</p>
-          <div class="product-features">
-            <span>Free</span>
-            <span>iOS &amp; Android</span>
-            <span>MTG Commander</span>
-            <a href="https://commander-index.com" target="_blank" rel="noopener noreferrer" class="product-link"><span>commander-index.com &#8599;</span></a>
+          <p>The companion app for Magic: The Gathering Commander playgroups. Score deck power across twelve weighted categories, log matches the whole table confirms, track pod statistics, and keep life totals through a full game.</p>
+          <div class="tags">
+            <span class="tag">Free</span>
+            <span class="tag">iOS &amp; Android</span>
+            <span class="tag">MTG Commander</span>
+          </div>
+          <div class="meta-row">
+            <a class="btn btn-primary" href="https://commander-index.com" target="_blank" rel="noopener noreferrer">commander-index.com ↗</a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
 
   <!-- ─── FOOTER ─── -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="#hero" class="logo">
-            <div class="logo-icon"><img src="images/transparent_logo.png" alt="Guardian Digital Studios logo"></div>
-            <div class="logo-text">Guardian <span>Digital</span> Studios</div>
+    <div class="page">
+      <div class="fgrid">
+        <div class="fbrand">
+          <a class="logo" href="#hero">
+            <img class="glyph" src="images/transparent_logo.png" alt="">
+            <span class="wm">Guardian Digital Studios</span>
           </a>
-          <p>An independent software studio in Kensington, Maryland, building applications for people who play games.</p>
+          <p class="lede">An independent software studio in Kensington, Maryland, building applications for people who play games.</p>
         </div>
-        <div class="footer-links">
+        <div>
           <h4>Navigation</h4>
-          <a href="#hero">Home</a>
-          <a href="#about">About</a>
-          <a href="#products">Products</a>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Products</a></li>
+          </ul>
         </div>
-        <div class="footer-links">
+        <div>
           <h4>Legal</h4>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms of Service</a>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 Guardian Digital Studios, L.L.C. All rights reserved.</p>
-        <a href="#">Kensington, Maryland</a>
+      <div class="fbot">
+        <span>&copy; 2026 Guardian Digital Studios, L.L.C. All rights reserved.</span>
+        <span>Kensington, Maryland</span>
       </div>
     </div>
   </footer>

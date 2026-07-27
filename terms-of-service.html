@@ -7,54 +7,45 @@
   <meta name="description" content="Terms of Service for Guardian Digital Studios.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="images/transparent_logo.png">
   <link rel="apple-touch-icon" href="images/transparent_logo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ─── NAVIGATION ─── -->
-  <nav id="navbar">
-    <div class="nav-inner">
-      <a href="index.html" class="logo">
-        <div class="logo-icon"><img src="images/transparent_logo.png" alt="Guardian Digital Studios logo"></div>
-        <div class="logo-text">Guardian <span>Digital</span> Studios</div>
+  <nav>
+    <div class="in">
+      <a class="logo" href="index.html">
+        <img class="glyph" src="images/transparent_logo.png" alt="">
+        <span class="wm">Guardian Digital Studios</span>
       </a>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+      <button class="burger" type="button" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span><span></span>
       </button>
-      <div class="nav-links" id="navLinks">
-        <a href="index.html" onclick="closeMenu()">Home</a>
-        <a href="index.html#about" onclick="closeMenu()">About</a>
-        <a href="index.html#products" onclick="closeMenu()">Products</a>
-      </div>
+      <ul id="navLinks">
+        <li><a class="link" href="index.html" onclick="closeMenu()">Home</a></li>
+        <li><a class="link" href="index.html#about" onclick="closeMenu()">About</a></li>
+        <li><a class="link" href="index.html#products" onclick="closeMenu()">Products</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- ─── LEGAL HERO ─── -->
-  <section class="legal-hero">
-    <div class="legal-hero-content">
-      <div class="section-label">Legal</div>
+  <div class="page">
+    <div class="legal-hero">
+      <p class="eyebrow">Legal</p>
       <h1>Terms of Service</h1>
       <p class="legal-updated">Last updated: March 2026</p>
     </div>
-  </section>
 
-  <!-- ─── LEGAL BODY ─── -->
-  <main class="legal-body">
-    <div class="legal-inner">
-
+    <main class="legal-body">
       <div class="legal-section">
         <h2>Agreement to Terms</h2>
         <p>By accessing or using any application or service provided by Guardian Digital Studios, L.L.C. ("we", "our", or "us"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use our services.</p>
       </div>
-
       <div class="legal-section">
         <h2>Description of Services</h2>
         <p>Guardian Digital Studios develops and operates mobile applications, video games, and related digital services. These Terms apply to all current and future products and services offered by Guardian Digital Studios.</p>
       </div>
-
       <div class="legal-section">
         <h2>User Accounts</h2>
         <p>To use certain features of our services, you may need to create an account. You are responsible for:</p>
@@ -65,7 +56,6 @@
           <li>Notifying us immediately of any unauthorized use of your account</li>
         </ul>
       </div>
-
       <div class="legal-section">
         <h2>Acceptable Use</h2>
         <p>You agree not to:</p>
@@ -79,18 +69,15 @@
           <li>Use automated systems or bots to access our services</li>
         </ul>
       </div>
-
       <div class="legal-section">
         <h2>Intellectual Property</h2>
         <p>All content, features, and functionality of our applications — including but not limited to text, graphics, logos, icons, images, audio, software, and code — are the exclusive property of Guardian Digital Studios, L.L.C. and are protected by copyright, trademark, and other intellectual property laws.</p>
         <p>You may not copy, modify, distribute, sell, or lease any part of our services or software without our prior written consent.</p>
       </div>
-
       <div class="legal-section">
         <h2>User Content</h2>
         <p>You retain ownership of any data you submit through our services. By using our services, you grant us a limited license to store, process, and display your content as necessary to provide the services.</p>
       </div>
-
       <div class="legal-section">
         <h2>Subscription and Payments</h2>
         <p>Some features of our services may require a paid subscription or one-time purchase. If applicable:</p>
@@ -101,67 +88,63 @@
           <li>Refunds are handled according to the policies of the respective app store</li>
         </ul>
       </div>
-
       <div class="legal-section">
         <h2>Termination</h2>
         <p>We reserve the right to suspend or terminate your account at any time if you violate these Terms of Service. You may also delete your account at any time through your account settings. Upon account deletion, your personal data will be removed in accordance with our Privacy Policy.</p>
       </div>
-
       <div class="legal-section">
         <h2>Limitation of Liability</h2>
         <p>To the fullest extent permitted by law, Guardian Digital Studios, L.L.C. shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of our services. Our total liability for any claim arising from these terms shall not exceed the amount you have paid us in the 12 months preceding the claim.</p>
       </div>
-
       <div class="legal-section">
         <h2>Disclaimer of Warranties</h2>
         <p>Our services are provided "as is" and "as available" without warranties of any kind, either express or implied. We do not guarantee that our services will be uninterrupted, secure, or error-free.</p>
       </div>
-
       <div class="legal-section">
         <h2>Governing Law</h2>
         <p>These Terms of Service shall be governed by and construed in accordance with the laws of the State of Maryland, without regard to its conflict of law provisions. Any disputes arising from these terms shall be resolved in the courts of Montgomery County, Maryland.</p>
       </div>
-
       <div class="legal-section">
         <h2>Changes to These Terms</h2>
         <p>We may update these Terms of Service from time to time. We will notify you of significant changes by posting a notice on our website or within our services, or by updating the "Last updated" date. Your continued use of our services after changes are posted constitutes your acceptance of the revised terms.</p>
       </div>
-
       <div class="legal-section legal-contact">
         <h2>Contact Us</h2>
         <p>If you have questions about these Terms of Service, please contact us at:</p>
         <p>Guardian Digital Studios, L.L.C.<br>10605 Concord Street, Suite 440<br>Kensington, MD 20895<br>Phone: <a href="tel:+13016867150">(301) 686-7150</a><br>Email: <a href="mailto:hello@guardiandigitalstudios.com">hello@guardiandigitalstudios.com</a></p>
       </div>
+    </main>
+  </div>
 
-    </div>
-  </main>
-
-  <!-- ─── FOOTER ─── -->
   <footer>
-    <div class="footer-inner">
-      <div class="footer-top">
-        <div class="footer-brand">
-          <a href="index.html" class="logo">
-            <div class="logo-icon"><img src="images/transparent_logo.png" alt="Guardian Digital Studios logo"></div>
-            <div class="logo-text">Guardian <span>Digital</span> Studios</div>
+    <div class="page">
+      <div class="fgrid">
+        <div class="fbrand">
+          <a class="logo" href="index.html">
+            <img class="glyph" src="images/transparent_logo.png" alt="">
+            <span class="wm">Guardian Digital Studios</span>
           </a>
-          <p>A Kensington, MD startup building innovative apps and passion-driven games — accessible to everyone.</p>
+          <p class="lede">An independent software studio in Kensington, Maryland, building applications for people who play games.</p>
         </div>
-        <div class="footer-links">
+        <div>
           <h4>Navigation</h4>
-          <a href="index.html">Home</a>
-          <a href="index.html#about">About</a>
-          <a href="index.html#products">Products</a>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#products">Products</a></li>
+          </ul>
         </div>
-        <div class="footer-links">
+        <div>
           <h4>Legal</h4>
-          <a href="privacy-policy.html">Privacy Policy</a>
-          <a href="terms-of-service.html">Terms of Service</a>
+          <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+          </ul>
         </div>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Guardian Digital Studios, L.L.C. All rights reserved.</p>
-        <a href="index.html">Kensington, Maryland</a>
+      <div class="fbot">
+        <span>&copy; 2026 Guardian Digital Studios, L.L.C. All rights reserved.</span>
+        <span>Kensington, Maryland</span>
       </div>
     </div>
   </footer>
