@@ -89,6 +89,23 @@ nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.06); }
 }
 .logo-text span { color: var(--blue-600); }
 
+/* ── Footer wordmark ─────────────────────────────────────────────────────
+   The footer sits on slate-900, so the wordmark needs the light treatment.
+   This used to be a style="color:..." attribute on each page, which the CSP
+   in _headers (style-src 'self', no 'unsafe-inline') silently drops in a real
+   browser. The result was "Guardian" and "Studios" painted in .logo's own
+   slate-900 on a slate-900 footer — invisible — while "Digital" survived
+   because it had an actual CSS rule.
+
+   Inline style attributes do not work on this site. Anything visual needs a
+   class, or it will look correct locally over file:// and be dead in
+   production. */
+footer .logo { color: var(--slate-200); }
+footer .logo-text span { color: var(--blue-400); }
+
+/* Product-card outbound link — was also an inline style. */
+.product-link { color: inherit; text-decoration: none; }
+
 .nav-links { display: flex; gap: 8px; align-items: center; }
 .nav-links a {
   text-decoration: none;
