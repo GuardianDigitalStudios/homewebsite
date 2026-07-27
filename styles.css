@@ -640,7 +640,9 @@ footer {
 
 .footer-brand p {
   font-size: 14px;
-  color: var(--slate-500);
+  /* slate-500 measured 3.75:1 on the slate-900 footer, under the 4.5:1 AA floor
+     for 14px text. slate-400 is 6.96:1. */
+  color: var(--slate-400);
   max-width: 320px;
   line-height: 1.7;
   margin-top: 12px;
@@ -656,7 +658,8 @@ footer {
 }
 .footer-links a {
   display: block;
-  color: var(--slate-500);
+  /* Same 3.75:1 problem as .footer-brand p — these are 14px links, not decoration. */
+  color: var(--slate-400);
   text-decoration: none;
   font-size: 14px;
   padding: 4px 0;
@@ -675,10 +678,13 @@ footer {
 }
 .footer-bottom p {
   font-size: 13px;
-  color: var(--slate-600);
+  /* This line carries the company name. slate-600 measured 2.36:1 on the
+     slate-900 footer — nearly three times under the 4.5:1 AA floor, and the
+     single darkest text on the page. */
+  color: var(--slate-400);
 }
 .footer-bottom a {
-  color: var(--slate-500);
+  color: var(--slate-400);
   text-decoration: none;
   font-size: 13px;
   transition: var(--transition);
