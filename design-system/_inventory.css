@@ -1,29 +1,60 @@
 /* Scaffolding only — deliberately neutral.
    This file exists so the inventory is readable, NOT to suggest a direction.
    No brand colour, no brand typeface, no layout opinion. Everything visual is
-   Claude Design's to decide. */
+   Claude Design's to decide.
+
+   It is theme-aware because the pane renders in the viewer's theme: the media
+   query carries the OS preference, and the explicit [data-theme] rules must be
+   able to win in *both* directions when the viewer toggles. A single hardcoded
+   background cannot do that, which is what the first version got wrong. */
+:root {
+  --bg: #ffffff; --fg: #111111; --dim: #555555; --faint: #6e6e6e;
+  --rule: #dddddd; --dash: #bbbbbb; --fill: #f6f6f6; --chip: #f2f2f2;
+  --flag: #b00020;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #16181c; --fg: #e8e8ea; --dim: #b2b4ba; --faint: #92959c;
+    --rule: #33363d; --dash: #4a4e57; --fill: #1e2127; --chip: #24272e;
+    --flag: #ff8a80;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #16181c; --fg: #e8e8ea; --dim: #b2b4ba; --faint: #92959c;
+  --rule: #33363d; --dash: #4a4e57; --fill: #1e2127; --chip: #24272e;
+  --flag: #ff8a80;
+}
+:root[data-theme="light"] {
+  --bg: #ffffff; --fg: #111111; --dim: #555555; --faint: #6e6e6e;
+  --rule: #dddddd; --dash: #bbbbbb; --fill: #f6f6f6; --chip: #f2f2f2;
+  --flag: #b00020;
+}
+
 * { box-sizing: border-box; }
-body { margin: 0; padding: 24px; background: #fff; color: #111;
+html, body { background: var(--bg); }
+body { margin: 0; padding: 24px; color: var(--fg);
        font: 15px/1.6 ui-sans-serif, system-ui, sans-serif; }
-h1 { font-size: 19px; margin: 0 0 4px; }
+h1 { font-size: 19px; margin: 0 0 4px; color: var(--fg); }
 h2 { font-size: 14px; margin: 22px 0 6px; text-transform: uppercase;
-     letter-spacing: .08em; color: #666; font-weight: 600; }
-.lede { color: #555; margin: 0 0 18px; max-width: 62ch; }
-.slot { border: 1px dashed #bbb; border-radius: 4px; padding: 10px 12px;
+     letter-spacing: .08em; color: var(--dim); font-weight: 600; }
+.lede { color: var(--dim); margin: 0 0 18px; max-width: 62ch; }
+.slot { border: 1px dashed var(--dash); border-radius: 4px; padding: 10px 12px;
         margin-bottom: 8px; }
-.slot > .k { font: 11px/1.4 ui-monospace, monospace; color: #777;
+.slot > .k { font: 11px/1.4 ui-monospace, monospace; color: var(--faint);
              text-transform: uppercase; letter-spacing: .06em; }
-.slot > .v { margin-top: 2px; }
-.meta { border-left: 3px solid #111; padding-left: 12px; margin: 14px 0;
-        font-size: 13.5px; }
+.slot > .v { margin-top: 2px; color: var(--fg); }
+.meta { border-left: 3px solid var(--fg); padding-left: 12px; margin: 14px 0;
+        font-size: 13.5px; color: var(--fg); }
 .meta b { display: block; font-size: 11px; text-transform: uppercase;
-          letter-spacing: .07em; color: #666; margin-bottom: 2px; }
-.warn { border-left-color: #b00; }
-.warn b { color: #b00; }
+          letter-spacing: .07em; color: var(--dim); margin-bottom: 2px; }
+.warn { border-left-color: var(--flag); }
+.warn b { color: var(--flag); }
 ul { margin: 6px 0 0; padding-left: 20px; }
 li { margin: 3px 0; }
 table { border-collapse: collapse; width: 100%; font-size: 13.5px; margin-top: 6px; }
-th, td { border: 1px solid #ddd; padding: 6px 9px; text-align: left; vertical-align: top; }
-th { background: #f6f6f6; font-weight: 600; }
-code { font: 12.5px ui-monospace, monospace; background: #f2f2f2; padding: 1px 4px;
-       border-radius: 3px; }
+th, td { border: 1px solid var(--rule); padding: 6px 9px; text-align: left;
+         vertical-align: top; color: var(--fg); }
+th { background: var(--fill); font-weight: 600; }
+code { font: 12.5px ui-monospace, monospace; background: var(--chip);
+       color: var(--fg); padding: 1px 4px; border-radius: 3px; }
+em { color: var(--fg); }
