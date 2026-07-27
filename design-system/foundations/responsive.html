@@ -1,0 +1,12 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Responsive behaviour</title><link rel="stylesheet" href="../_inventory.css"></head><body>
+<h1>Responsive behaviour</h1>
+<p class="lede">Three breakpoints today. Content-driven rather than device-driven, and worth re-deriving rather than inheriting.</p>
+<table><tr><th>Breakpoint</th><th>What changes</th></tr>
+<tr><td>≤ 900px</td><td>Products grid drops to one column</td></tr>
+<tr><td>≤ 680px</td><td>Nav collapses to the hamburger; About grid and value cards stack; type sizes step down</td></tr>
+<tr><td>≤ 400px</td><td>Small-phone adjustments</td></tr></table>
+<div class="meta"><b>The hero is full-viewport-height</b><code>min-height: 100vh</code> with a <code>100svh</code> fallback for mobile browser chrome. Not a requirement — it is a choice, and on a short landscape screen it pushes everything below the fold.</div>
+<div class="meta"><b>Reading measure</b>The legal pages are the only long-form reading on the site and need a comfortable line length at every width. Body copy elsewhere is capped around 320–600px depending on the block.</div>
+<div class="meta warn"><b>Test the footer at narrow widths</b>It is a four-column layout that has to reflow, and it is also the region where every contrast failure has happened.</div>
+</body></html>

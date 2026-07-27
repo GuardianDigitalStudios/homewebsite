@@ -1,0 +1,28 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Motion and behaviour</title><link rel="stylesheet" href="../_inventory.css"></head><body>
+<h1>Motion and behaviour</h1>
+<p class="lede">All of it. The site runs about 25 lines of JavaScript and this is what they do.</p>
+<table><tr><th>Behaviour</th><th>Detail</th></tr>
+<tr><td>Sticky nav</td><td>Gains a <code>scrolled</code> class past 20px, which currently adds a shadow</td></tr>
+<tr><td>Mobile menu</td><td>Hamburger toggles an <code>open</code> class; any link closes it</td></tr>
+<tr><td>Scroll reveal</td><td>Elements marked <code>.reveal</code> start at <code>opacity: 0</code> and <code>translateY(30px)</code>, then transition in over 0.7s when 15% visible. Siblings stagger 80ms apart.</td></tr>
+<tr><td>Hero entrance</td><td>Headline and sub fade down on load, staggered 0.1s / 0.2s</td></tr>
+<tr><td>Badge pulse</td><td>A 2s infinite opacity pulse on a small dot</td></tr></table>
+
+<div class="meta warn"><b>Defect: reduced motion is not honoured</b>
+There is no <code>prefers-reduced-motion</code> rule anywhere in the stylesheet.
+Every animation above plays regardless of the visitor's system setting. Whatever
+the new design does with motion, it needs that media query.</div>
+
+<div class="meta warn"><b>Risk: content is hidden until JavaScript reveals it</b>
+<code>.reveal</code> sets <code>opacity: 0</code> in CSS, and only the
+IntersectionObserver adds the class that brings it back. If the script fails, is
+blocked, or never runs, the About and Products sections stay <b>permanently
+invisible</b> — the page renders as a hero and a footer with nothing between them.
+<ul><li>This is not hypothetical: it is exactly what happened when the page was
+screenshotted headlessly, and the sections came back blank.</li>
+<li>It also affects anything that reads the page without executing scripts, which
+matters for a site whose job is being the SEO front door.</li>
+<li>The robust pattern is to animate <em>from</em> visible, or to set the hidden
+state from JavaScript so a no-JS render shows content rather than hiding it.</li></ul></div>
+</body></html>
