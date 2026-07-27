@@ -1,0 +1,39 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hard constraints</title><link rel="stylesheet" href="../_inventory.css"></head><body>
+<h1>Hard constraints</h1>
+<p class="lede">Things any design for this site must satisfy. These are not preferences — each one has already broken the live site at least once.</p>
+
+<div class="meta warn"><b>Inline styles do not work</b>
+The site sends <code>Content-Security-Policy: style-src 'self'</code> with no
+<code>'unsafe-inline'</code>, so browsers silently discard every
+<code>style="…"</code> attribute. This shipped: the footer wordmark was styled
+inline, the attribute was dropped, and the words "Guardian" and "Studios"
+rendered in the footer's own background colour — invisible in production while
+looking perfect locally over <code>file://</code>.
+<ul><li>Every visual property needs a class in a stylesheet.</li>
+<li>An inline <code>&lt;style&gt;</code> block is blocked too.</li>
+<li>Verify against a server sending the real CSP header, not a local file.</li></ul></div>
+
+<div class="meta warn"><b>Text contrast is measured, not eyeballed</b>
+Four footer values failed WCAG AA at once, the worst being the company name at
+<b>2.36:1</b> against its own background. AA needs 4.5:1 for text under 18.66px.
+<ul><li>Dark grounds and light grounds need <b>separate</b> muted roles. One value
+cannot serve both — measured, the light-page muted colour hit 2.70:1 on the dark
+footer, and the dark-footer one hit 2.90:1 on the page.</li></ul></div>
+
+<div class="meta"><b>Fonts</b>
+Loaded from Google Fonts, which the CSP explicitly allows
+(<code>style-src … fonts.googleapis.com</code>, <code>font-src … fonts.gstatic.com</code>).
+Currently Outfit and JetBrains Mono. A different family is fine; a
+self-hosted or third-party CDN font needs the CSP updated with it.</div>
+
+<div class="meta"><b>Hosting</b>
+Static files on Cloudflare Pages. No build step, no framework — plain HTML, one
+stylesheet, one small script. Anything requiring compilation is a new toolchain.</div>
+
+<div class="meta"><b>Logo</b>
+<code>images/transparent_logo.png</code> — a blue shield mark, real alpha channel,
+no text baked in. There is also <code>logo.jpg</code>, an opaque white-background
+version whose artwork contains the company name in illegible micro-type; it
+should not be used on any coloured ground.</div>
+</body></html>

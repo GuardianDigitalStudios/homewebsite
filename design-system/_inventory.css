@@ -1,0 +1,29 @@
+/* Scaffolding only — deliberately neutral.
+   This file exists so the inventory is readable, NOT to suggest a direction.
+   No brand colour, no brand typeface, no layout opinion. Everything visual is
+   Claude Design's to decide. */
+* { box-sizing: border-box; }
+body { margin: 0; padding: 24px; background: #fff; color: #111;
+       font: 15px/1.6 ui-sans-serif, system-ui, sans-serif; }
+h1 { font-size: 19px; margin: 0 0 4px; }
+h2 { font-size: 14px; margin: 22px 0 6px; text-transform: uppercase;
+     letter-spacing: .08em; color: #666; font-weight: 600; }
+.lede { color: #555; margin: 0 0 18px; max-width: 62ch; }
+.slot { border: 1px dashed #bbb; border-radius: 4px; padding: 10px 12px;
+        margin-bottom: 8px; }
+.slot > .k { font: 11px/1.4 ui-monospace, monospace; color: #777;
+             text-transform: uppercase; letter-spacing: .06em; }
+.slot > .v { margin-top: 2px; }
+.meta { border-left: 3px solid #111; padding-left: 12px; margin: 14px 0;
+        font-size: 13.5px; }
+.meta b { display: block; font-size: 11px; text-transform: uppercase;
+          letter-spacing: .07em; color: #666; margin-bottom: 2px; }
+.warn { border-left-color: #b00; }
+.warn b { color: #b00; }
+ul { margin: 6px 0 0; padding-left: 20px; }
+li { margin: 3px 0; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; margin-top: 6px; }
+th, td { border: 1px solid #ddd; padding: 6px 9px; text-align: left; vertical-align: top; }
+th { background: #f6f6f6; font-weight: 600; }
+code { font: 12.5px ui-monospace, monospace; background: #f2f2f2; padding: 1px 4px;
+       border-radius: 3px; }
