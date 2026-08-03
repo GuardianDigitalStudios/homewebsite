@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
-/* Guardian Digital Studios — ink & paper.
+/* Guardian Digital Studios, ink & paper.
    Light is the base; dark is an override on prefers-color-scheme.
    Every colour is a token; components never name a raw colour.
 
    NOTE FOR ANYONE EDITING THIS SITE: the CSP in _headers sets
    style-src 'self' with no 'unsafe-inline', so <style> blocks and
    style="..." attributes are silently dropped by the browser. Everything
-   visual must live in this file. This is not a preference — the footer
+   visual must live in this file. This is not a preference, the footer
    wordmark once shipped invisible in production for exactly this reason,
    while looking perfect over file://. */
 
@@ -36,7 +36,7 @@
   --base:220ms;
   --slow:420ms;
 
-  /* colour — light (paper) */
+  /* colour, light (paper) */
   --bg:oklch(.976 .006 82);
   --surface-1:oklch(.993 .004 82);
   --surface-2:oklch(.957 .007 82);
@@ -47,7 +47,7 @@
   --text-muted:oklch(.470 .012 66);
   /* Deepened from .610, which measured 3.54:1 on paper and missed the 4.5
      floor. .eyebrow uses this at 13px, so the strict threshold applies.
-     This is 4.83:1. Same hue and chroma — only lightness moved. */
+     This is 4.83:1. Same hue and chroma, only lightness moved. */
   --text-faint:oklch(.535 .011 70);
   --text-inverse:oklch(.976 .006 82);
   --accent:oklch(.500 .112 62);

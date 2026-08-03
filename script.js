@@ -4,7 +4,7 @@
 //
 //   * A scroll-reveal observer. Elements were given `opacity: 0` in CSS and
 //     only this script brought them back, so if it failed to run the About and
-//     Products sections stayed permanently invisible — the page rendered as a
+//     Products sections stayed permanently invisible. The page rendered as a
 //     hero above a footer with nothing between them. That is a bad trade for a
 //     fade, and worse on a site whose job is being the SEO front door.
 //
@@ -13,7 +13,7 @@
 //     nothing left for the class to change.
 //
 // Nothing here hides content. If this file fails to load the page is still
-// complete — only the mobile menu stops opening.
+// complete, and only the mobile menu stops opening.
 
 function toggleMenu() {
   const links = document.getElementById('navLinks');

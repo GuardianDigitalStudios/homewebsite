@@ -18,7 +18,7 @@ the new design does with motion, it needs that media query.</div>
 <code>.reveal</code> sets <code>opacity: 0</code> in CSS, and only the
 IntersectionObserver adds the class that brings it back. If the script fails, is
 blocked, or never runs, the About and Products sections stay <b>permanently
-invisible</b> — the page renders as a hero and a footer with nothing between them.
+invisible</b>, the page renders as a hero and a footer with nothing between them.
 <ul><li>This is not hypothetical: it is exactly what happened when the page was
 screenshotted headlessly, and the sections came back blank.</li>
 <li>It also affects anything that reads the page without executing scripts, which
