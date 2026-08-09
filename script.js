@@ -28,3 +28,19 @@ function closeMenu() {
   links.classList.remove('open');
   burger.setAttribute('aria-expanded', 'false');
 }
+
+// Escape and click-away. Without these the only ways out of an open menu were
+// the burger itself and picking a link, so a mistaken tap left it covering the
+// page with no obvious dismissal.
+//
+// The click handler ignores anything inside <nav>: the burger's own click
+// bubbles to document, and closing here would fight toggleMenu() and leave the
+// menu shut on every attempt to open it.
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.getElementById('navLinks').classList.contains('open')) closeMenu();
+});
+
+document.addEventListener('click', (e) => {
+  if (e.target.closest('nav')) return;
+  if (document.getElementById('navLinks').classList.contains('open')) closeMenu();
+});
