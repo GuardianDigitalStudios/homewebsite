@@ -147,7 +147,11 @@ section{padding:var(--s9) 0;border-top:var(--hair) solid var(--border)}
 .prose strong{color:var(--text);font-weight:400}
 
 .values{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--s4);margin-top:var(--s8)}
-.value{background:var(--surface-1);border:var(--hair) solid var(--border);border-radius:var(--r-md);padding:var(--s6);display:grid;gap:var(--s3);align-content:start;transition:background var(--base) var(--ease),border-color var(--base) var(--ease)}
+/* overflow-wrap:anywhere, not break-word: only `anywhere` reduces the card's
+   min-content width, and that width is the whole problem. The contact address
+   is 240px of unbreakable text, which forced every card to 310px once .values
+   drops to one column, so the page scrolled sideways below 334px. */
+.value{background:var(--surface-1);border:var(--hair) solid var(--border);border-radius:var(--r-md);padding:var(--s6);display:grid;gap:var(--s3);align-content:start;overflow-wrap:anywhere;transition:background var(--base) var(--ease),border-color var(--base) var(--ease)}
 .value:hover{background:var(--surface-2);border-color:var(--border-strong)}
 .value .idx{font:500 var(--step--1)/1 var(--font-mono);letter-spacing:.1em;color:var(--accent)}
 .value p{color:var(--text-muted);font-size:var(--step-0)}
