@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# Pre-commit: lightweight sanity checks for the static site.
+# See scripts/sanity-check.mjs for what's verified.
+# To bypass for a single commit: git commit --no-verify
+node scripts/sanity-check.mjs
