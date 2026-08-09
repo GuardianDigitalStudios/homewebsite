@@ -1,0 +1,12 @@
+# Cloudflare Pages _redirects
+#
+# design-system/ is the internal component library: eleven preview pages plus a
+# manifest and an inventory stylesheet. Pages deploys the whole repo root, so
+# they were live and crawlable at guardiandigitalstudios.com/design-system/...
+# (verified: /design-system/components/nav.html returned 200 in production).
+#
+# 301 rather than 404, because a redirect is the stronger deindex signal for
+# URLs that may already be in an index, and there is no 404 page to serve.
+# _headers also marks the path noindex, which is what holds if Cloudflare
+# resolves a static asset ahead of a redirect rule for a path that exists.
+/design-system/*  /  301

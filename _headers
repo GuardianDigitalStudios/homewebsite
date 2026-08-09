@@ -5,3 +5,9 @@
   Permissions-Policy: geolocation=(), microphone=(), camera=()
   Content-Security-Policy: default-src 'self'; script-src 'self' static.cloudflareinsights.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+# The internal component library. _redirects 301s these to /; this is the
+# belt-and-braces that keeps them out of an index either way, and covers the
+# case where a static asset is resolved ahead of the redirect rule.
+/design-system/*
+  X-Robots-Tag: noindex, nofollow
