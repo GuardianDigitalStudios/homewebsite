@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# /design-system/ is deliberately NOT disallowed here.
+#
+# Those pages are internal component previews and should not be public, so
+# _redirects sends them to / with a 301 and _headers marks them noindex.
+# Disallowing them would stop crawlers fetching the URL at all, which means
+# they would never see either signal, and anything already indexed would sit
+# there. Let the crawl happen; the redirect is what removes them.
+
+Sitemap: https://guardiandigitalstudios.com/sitemap.xml
