@@ -3,10 +3,11 @@
 <h1>Responsive behaviour</h1>
 <p class="lede">Three breakpoints today. Content-driven rather than device-driven, and worth re-deriving rather than inheriting.</p>
 <table><tr><th>Breakpoint</th><th>What changes</th></tr>
-<tr><td>≤ 900px</td><td>Products grid drops to one column</td></tr>
-<tr><td>≤ 680px</td><td>Nav collapses to the hamburger; About grid and value cards stack; type sizes step down</td></tr>
-<tr><td>≤ 400px</td><td>Small-phone adjustments</td></tr></table>
-<div class="meta"><b>The hero is full-viewport-height</b><code>min-height: 100vh</code> with a <code>100svh</code> fallback for mobile browser chrome. Not a requirement, it is a choice, and on a short landscape screen it pushes everything below the fold.</div>
+<tr><td>≤ 900px</td><td>Product card drops to one column and its image panel swaps its right border for a bottom one; footer grid goes to two columns with the brand block spanning both</td></tr>
+<tr><td>≤ 680px</td><td>Nav collapses to the hamburger; value cards and footer grid stack to one column; hero drops its 660px floor; type sizes step down</td></tr>
+<tr><td>≤ 400px</td><td>Wordmark shrinks a step; product card padding tightens</td></tr></table>
+<div class="meta"><b>Services needs no breakpoint, and that is the pattern to prefer</b><code>.services</code> is <code>repeat(auto-fit,minmax(min(240px,100%),1fr))</code>, so it drops 3 &rarr; 2 &rarr; 1 on available space alone. The <code>min(240px,100%)</code> is load-bearing: a bare <code>minmax(240px,1fr)</code> cannot shrink below its track and overflows a narrow viewport. Prefer this over adding a fourth breakpoint.</div>
+<div class="meta"><b>The hero is not full-viewport-height</b><code>min-height:660px</code>, dropping to <code>0</code> at ≤680px where the padding alone sets the height. An earlier version of this page claimed <code>100vh</code> with a <code>100svh</code> fallback; neither appears in the stylesheet. A fixed floor was the point, it does not push everything below the fold on a short landscape screen the way a viewport unit would.</div>
 <div class="meta"><b>Reading measure</b>The legal pages are the only long-form reading on the site and need a comfortable line length at every width. Body copy elsewhere is capped around 320–600px depending on the block.</div>
-<div class="meta warn"><b>Test the footer at narrow widths</b>It is a four-column layout that has to reflow, and it is also the region where every contrast failure has happened.</div>
+<div class="meta warn"><b>Test the footer at narrow widths</b><code>.fgrid</code> is three columns, <code>1.6fr 1fr 1fr</code> (brand, navigation, legal), not four. It reflows twice, to two columns at 900px with the brand spanning both, then to one at 680px. It is also the region where every contrast failure on this site has happened.</div>
 </body></html>

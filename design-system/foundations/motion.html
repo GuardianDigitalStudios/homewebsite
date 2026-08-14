@@ -1,28 +1,27 @@
 <!-- @dsCard group="Foundations" -->
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Motion and behaviour</title><link rel="stylesheet" href="../_inventory.css"></head><body>
 <h1>Motion and behaviour</h1>
-<p class="lede">All of it. The site runs about 25 lines of JavaScript and this is what they do.</p>
+<p class="lede">All of it. <code>script.js</code> is 19 lines and does exactly one thing, the mobile menu. Everything else here is a CSS transition. There is <b>no <code>@keyframes</code> rule anywhere on the site</b> and nothing animates on load.</p>
+<h2>Behaviour (script.js)</h2>
 <table><tr><th>Behaviour</th><th>Detail</th></tr>
-<tr><td>Sticky nav</td><td>Gains a <code>scrolled</code> class past 20px, which currently adds a shadow</td></tr>
-<tr><td>Mobile menu</td><td>Hamburger toggles an <code>open</code> class; any link closes it</td></tr>
-<tr><td>Scroll reveal</td><td>Elements marked <code>.reveal</code> start at <code>opacity: 0</code> and <code>translateY(30px)</code>, then transition in over 0.7s when 15% visible. Siblings stagger 80ms apart.</td></tr>
-<tr><td>Hero entrance</td><td>Headline and sub fade down on load, staggered 0.1s / 0.2s</td></tr>
-<tr><td>Badge pulse</td><td>A 2s infinite opacity pulse on a small dot</td></tr></table>
-
-<div class="meta warn"><b>Defect: reduced motion is not honoured</b>
-There is no <code>prefers-reduced-motion</code> rule anywhere in the stylesheet.
-Every animation above plays regardless of the visitor's system setting. Whatever
-the new design does with motion, it needs that media query.</div>
-
-<div class="meta warn"><b>Risk: content is hidden until JavaScript reveals it</b>
-<code>.reveal</code> sets <code>opacity: 0</code> in CSS, and only the
-IntersectionObserver adds the class that brings it back. If the script fails, is
-blocked, or never runs, the About and Products sections stay <b>permanently
-invisible</b>, the page renders as a hero and a footer with nothing between them.
-<ul><li>This is not hypothetical: it is exactly what happened when the page was
-screenshotted headlessly, and the sections came back blank.</li>
-<li>It also affects anything that reads the page without executing scripts, which
-matters for a site whose job is being the SEO front door.</li>
-<li>The robust pattern is to animate <em>from</em> visible, or to set the hidden
-state from JavaScript so a no-JS render shows content rather than hiding it.</li></ul></div>
+<tr><td>Mobile menu</td><td>The burger toggles an <code>open</code> class on <code>#navLinks</code> and syncs <code>aria-expanded</code>. Any link closes it.</td></tr>
+<tr><td>Escape</td><td>Closes the menu when it is open.</td></tr>
+<tr><td>Click away</td><td>A click outside <code>&lt;nav&gt;</code> closes it. The handler returns early for anything inside <code>&lt;nav&gt;</code>, because the burger's own click bubbles to <code>document</code> and would otherwise fight <code>toggleMenu()</code> and leave the menu shut on every attempt to open it.</td></tr></table>
+<h2>Motion (styles.css)</h2>
+<table><tr><th>Target</th><th>Property</th><th>Duration</th></tr>
+<tr><td><code>a</code></td><td><code>color</code>, <code>border-color</code></td><td><code>--fast</code> 120ms</td></tr>
+<tr><td><code>.btn</code></td><td><code>background</code>, <code>border-color</code>, <code>transform</code></td><td><code>--fast</code> 120ms</td></tr>
+<tr><td><code>.btn:active</code></td><td><code>translateY(1px)</code></td><td>as above</td></tr>
+<tr><td><code>.value</code>, <code>.service</code></td><td><code>background</code>, <code>border-color</code> on hover</td><td><code>--base</code> 220ms</td></tr>
+<tr><td><code>nav ul</code></td><td><code>max-height</code> 0 &rarr; 260px</td><td><code>--base</code> 220ms</td></tr>
+<tr><td><code>html</code></td><td><code>scroll-behavior:smooth</code> for in-page anchors</td><td>browser default</td></tr></table>
+<div class="meta"><b>Easing and durations</b>One curve, <code>--ease: cubic-bezier(.2,.6,.2,1)</code>. Three durations are defined, <code>--fast</code> 120ms, <code>--base</code> 220ms and <code>--slow</code> 420ms; <code>--slow</code> is currently unused. Nothing on the site transitions for longer than 220ms.</div>
+<div class="meta"><b>Reduced motion is honoured</b><code>@media (prefers-reduced-motion:reduce)</code> collapses <code>animation-duration</code> and <code>transition-duration</code> to <code>.01ms</code> and forces <code>scroll-behavior:auto</code>, universally. An earlier version of this page listed the absence of that rule as an open defect. It was added; the defect is closed.</div>
+<div class="meta warn"><b>Do not measure max-height in the tick you add the class</b>Reading the computed <code>max-height</code> of <code>nav ul</code> immediately after <code>open</code> is added returns <code>0px</code>, because that is the animation's first frame. The menu was reported broken twice on that basis and was working the whole time. Disable transitions, or wait a frame, before believing the value.
+<p>The 260px ceiling is also a link count: about 51px per link, so four fit with room for one more, and a sixth clips silently. See <a href="../components/nav.html">Navigation</a>.</p></div>
+<div class="meta"><b>History: what was removed, and why it is not coming back</b><ul>
+<li><b>Scroll reveal.</b> Elements were given <code>opacity:0</code> in CSS and only an IntersectionObserver brought them back, so if the script failed to run the About and Products sections stayed permanently invisible and the page rendered as a hero above a footer with nothing between. That is a bad trade for a fade, and worse on a site whose job is being the SEO front door. It also actually reproduced: headless screenshots came back blank.</li>
+<li><b>A <code>scrolled</code> class on the nav.</b> The bar is translucent and blurred at every scroll position now, so the class had nothing left to change and its scroll listener was deleted.</li>
+<li><b>Hero entrance fade and a badge pulse.</b> Both gone with the stylesheet that defined them. No <code>@keyframes</code> survives.</li></ul>
+<p><b>Nothing in CSS may hide content that only JavaScript restores.</b> If a future design wants entrance motion, animate <em>from</em> visible, or set the hidden state from JavaScript so a no-JS render shows content rather than hiding it.</p></div>
 </body></html>
