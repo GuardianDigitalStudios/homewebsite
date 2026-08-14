@@ -32,11 +32,12 @@ stack, <code>'Helvetica Neue', Helvetica, Arial, sans-serif</code>. Most of the
 page's words therefore need no network request at all.</li>
 <li>A different family is fine; a self-hosted or third-party CDN font needs the
 CSP updated with it.</li>
-<li>The <code>@import</code> sits on line 1 of <code>styles.css</code>, so the
-browser cannot discover the font request until it has fetched and parsed that
-file. The two <code>preconnect</code> hints in the head are warming a connection
-for a URL that is one round trip away from being asked for. Moving it to a
-<code>&lt;link rel="stylesheet"&gt;</code> would start it in parallel.</li></ul></div>
+<li>They load from a <code>&lt;link rel="stylesheet"&gt;</code> in each page's
+head, and <b>must not</b> go back to an <code>@import</code> in
+<code>styles.css</code>. An <code>@import</code> there cannot be discovered until
+that file has itself been fetched and parsed, which left the font request a full
+round trip behind the two <code>preconnect</code> hints that exist to warm it.
+The <code>&lt;link&gt;</code> is found in the head's first parse.</li></ul></div>
 
 <div class="meta"><b>Hosting</b>
 Static files on Cloudflare Pages. No build step, no framework, plain HTML, one

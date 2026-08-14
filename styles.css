@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=IBM+Plex+Mono:wght@400;500&display=swap');
-
 /* Guardian Digital Studios, ink & paper.
    Light is the base; dark is an override on prefers-color-scheme.
    Every colour is a token; components never name a raw colour.
@@ -9,7 +7,14 @@
    style="..." attributes are silently dropped by the browser. Everything
    visual must live in this file. This is not a preference, the footer
    wordmark once shipped invisible in production for exactly this reason,
-   while looking perfect over file://. */
+   while looking perfect over file://.
+
+   FONTS ARE NOT IMPORTED HERE, AND MUST NOT BE. Newsreader and IBM Plex Mono
+   are loaded by a <link rel="stylesheet"> in each page's head. They used to be
+   an @import on line 1 of this file, which cannot be discovered until this file
+   has itself been fetched and parsed, so the font request sat a full round trip
+   behind the two preconnect hints that exist to warm it. The <link> is found in
+   the head's first parse instead. Adding a font here undoes that silently. */
 
 :root{
   /* type */
