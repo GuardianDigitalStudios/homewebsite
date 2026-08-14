@@ -160,6 +160,27 @@ section{padding:var(--s9) 0;border-top:var(--hair) solid var(--border)}
 .value h3{font-size:var(--step-1)}
 .value p{color:var(--text-muted);font-size:var(--step-0)}
 
+/* ─── SERVICES ─── */
+/* auto-fit rather than a fixed three columns, so the count drops 3 → 2 → 1 on
+   its own and this component needs no breakpoint of its own. The min() is the
+   part that matters: a bare minmax(240px,1fr) cannot go below 240px, so a
+   viewport narrower than one track plus .page padding overflows sideways.
+   min(240px,100%) lets the track shrink instead, which is the same class of bug
+   as the .value min-content trap below and worth avoiding by construction. */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:var(--s4)}
+.service{background:var(--surface-1);border:var(--hair) solid var(--border);border-radius:var(--r-md);padding:var(--s6);display:grid;gap:var(--s3);align-content:start;overflow-wrap:anywhere;transition:background var(--base) var(--ease),border-color var(--base) var(--ease)}
+.service:hover{background:var(--surface-2);border-color:var(--border-strong)}
+.service h3{font-size:var(--step-1)}
+.service p{color:var(--text-muted);font-size:var(--step-0)}
+
+/* The only place on the site that asks for work. overflow-wrap:anywhere for the
+   same reason as .value: it holds the contact address, which is 240px of
+   unbreakable text. The button label is deliberately several short words rather
+   than the address itself, so it can wrap at a space and never sets a floor. */
+.cta{margin-top:var(--s7);padding:var(--s6);background:var(--surface-2);border:var(--hair) solid var(--border);border-radius:var(--r-md);display:grid;gap:var(--s4);justify-items:start;overflow-wrap:anywhere}
+.cta h3{font-size:var(--step-2)}
+.cta p{color:var(--text-muted);max-width:52ch}
+
 /* ─── PRODUCT ─── */
 .product{background:var(--surface-1);border:var(--hair) solid var(--border);border-radius:var(--r-lg);overflow:hidden;display:grid;grid-template-columns:420px 1fr}
 .shot{background:var(--surface-2);border-right:var(--hair) solid var(--border);display:grid;place-items:center;padding:var(--s7)}

@@ -1,13 +1,16 @@
 <!-- @dsCard group="Components" -->
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Navigation</title><link rel="stylesheet" href="../_inventory.css"></head><body>
 <h1>Navigation</h1>
-<p class="lede">Sticky top bar, present on all three pages.</p>
+<p class="lede">Sticky top bar, present on all three pages. Translucent and blurred at every scroll position, so there is no separate scrolled state.</p>
 <div class="slot"><div class="k">Logo lockup</div><div class="v">Shield mark + "Guardian <em>Digital</em> Studios", the middle word is emphasised, currently by colour</div></div>
-<div class="slot"><div class="k">Links</div><div class="v">Home · About · Products</div></div>
+<div class="slot"><div class="k">Links</div><div class="v">Home · About · Services · Products</div></div>
 <div class="slot"><div class="k">Mobile</div><div class="v">Hamburger toggles a full-width panel; links close it on tap</div></div>
+<div class="meta warn"><b>The mobile panel has a hard ceiling, and it is a count of links</b><code>nav ul.open</code> animates to <code>max-height:260px</code>, because <code>auto</code> cannot be transitioned. Each link is roughly 51px, so four fit in 204px and there is room for one more. A sixth link silently clips. Raise the value in the same commit that adds the link.
+<p>When checking this, do not read <code>max-height</code> in the tick the class is added &mdash; it returns <code>0px</code>, because that is the animation's first frame. The menu has been reported broken twice on that basis while working correctly.</p></div>
 <div class="meta"><b>States</b><ul>
-<li>Default, and scrolled (currently gains a shadow)</li>
+<li>Default. There is no scrolled state: the bar is translucent and blurred at every position, so the <code>scrolled</code> class had nothing left to change and its scroll listener was removed</li>
 <li>Link hover / focus, focus must be visible, it is keyboard-reachable</li>
+<li>Current page, via <code>aria-current</code></li>
 <li>Mobile menu open / closed</li></ul></div>
 <div class="meta warn"><b>Constraint</b>The lockup appears on both a light nav and a dark footer. Whatever distinguishes "Digital" has to survive both grounds.</div>
 </body></html>
