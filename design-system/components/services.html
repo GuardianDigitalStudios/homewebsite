@@ -7,8 +7,9 @@
 <tr><td>Mobile apps</td><td>iOS and Android from a single Flutter codebase, from the first sketch through to the store listing.</td></tr>
 <tr><td>Maintenance and hosting</td><td>Updates, fixes, hosting and the domain. Available on its own for a site or app someone else built.</td></tr></table>
 <h2>The ask</h2>
-<div class="slot"><div class="k">Heading</div><div class="v">Start a project</div></div>
-<div class="slot"><div class="k">Body</div><div class="v">Tell us what you need and what it is for. Project enquiries go to hello@guardiandigitalstudios.com.</div></div>
+<div class="slot"><div class="k">Heading</div><div class="v">Tell us where it is now</div></div>
+<div class="slot"><div class="k">Body</div><div class="v">A sketch, a half-finished build, or something already live that needs looking after. Project enquiries go to hello@guardiandigitalstudios.com.</div></div>
+<div class="meta"><b>The heading asks about state, not intent</b>It was "Start a project", which only addressed someone beginning from nothing and quietly excluded the other two entry points the hero claims. "Tell us where it is now" matches the headline's "any part of it", and the three items in the body are those entry points in order.</div>
 <div class="slot"><div class="k">Button</div><div class="v">"Email us about a project" &mdash; <code>.btn.btn-primary</code>, <code>mailto:</code> with <code>?subject=Project enquiry</code></div></div>
 <div class="meta warn"><b>The button label must not be the address</b>It says "Email us about a project" and not <code>hello@guardiandigitalstudios.com</code> on purpose. The address is 240px of text with no break opportunity; inside a pill with 44px of horizontal padding it needs 284px, and with <code>.page</code>'s 48px it needs 332px, so a bare-address label scrolls the page sideways under 332px. Several short words wrap at a space and set no floor. Same failure as the card 04 min-content trap in <a href="value-cards.html">value cards</a>.
 <p><code>overflow-wrap:anywhere</code> on <code>.cta</code> covers the address where it appears as running text in the body line.</p></div>
