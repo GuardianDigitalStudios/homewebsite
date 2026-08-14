@@ -1,15 +1,20 @@
 <!-- @dsCard group="Components" -->
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Value cards</title><link rel="stylesheet" href="../_inventory.css"></head><body>
 <h1>Value cards</h1>
-<p class="lede">Four, in the About section. Real content below.</p>
-<table><tr><th>Title</th><th>Body</th></tr>
-<tr><td>Built from experience</td><td>Commander Index grew out of our own playgroup. We build the software we rely on, which is why it holds up in use.</td></tr>
-<tr><td>Free, in full</td><td>Every feature in Commander Index is available to everyone at no cost. Supporters remove the ads and unlock cosmetic options, and nothing functional sits behind a payment.</td></tr>
-<tr><td>Focused by design</td><td>We commit fully to each product rather than spreading our attention across many. Every release is something we stand behind.</td></tr>
-<tr><td>Support that responds</td><td>Write to hello@guardiandigitalstudios.com and someone on the team will answer. Every report gets read.</td></tr></table>
-<div class="meta"><b>Currently</b>Each card carries a decorative emoji. Not load-bearing, drop or replace freely.</div>
+<p class="lede">Four, in the About section of index.html. A two-column grid that collapses to one at 680px. Real content below, current as of the apps-and-websites rewrite.</p>
+<table><tr><th>Idx</th><th>Title</th><th>Body</th></tr>
+<tr><td>01</td><td>Works without an account</td><td>The game tracker keeps life totals, commander damage and poison for up to six players with no sign-up.</td></tr>
+<tr><td>02</td><td>No paid features</td><td>Every feature is free. Supporters remove the ads and unlock cosmetic extras: themes, colours and a badge. Nothing functional sits behind a payment.</td></tr>
+<tr><td>03</td><td>No tracking</td><td>Our ads are not personalised. Nothing follows you between apps, and nothing about the decks you build or the games you play is used to choose what you are shown.</td></tr>
+<tr><td>04</td><td>Contact</td><td>Support and general enquiries go to hello@guardiandigitalstudios.com. Messages are read and answered.</td></tr></table>
+<div class="meta"><b>The index is a number, not an emoji</b>Each card opens with a zero-padded <code>01</code>–<code>04</code> in mono, accent-coloured, via <code>.value .idx</code>. An earlier version of this page described a decorative emoji per card as droppable. There is no emoji. The number is the only ornament, and the sequence is the reason it reads as a set.</div>
+<div class="meta warn"><b>Card 04 sets the width of all four — do not put another unbreakable string in one</b>
+<code>hello@guardiandigitalstudios.com</code> is 240px of text with no break opportunity, which made card 04's min-content 244px, which made <em>every</em> card 310px once <code>.values</code> collapsed to one column, which scrolled the whole page sideways below 334px.
+<p>Held off by <code>overflow-wrap:anywhere</code> on <code>.value</code>. It has to be <code>anywhere</code> and not <code>break-word</code>, because only <code>anywhere</code> feeds back into intrinsic sizing, and intrinsic sizing is the entire problem. A URL, a package name or a second address in any card re-opens this.</p></div>
+<div class="meta"><b>Titles are h3, and the size is set here rather than inherited</b>These were <code>h4</code> because 19px looked right, which skipped a level under the section's <code>h2</code>. They are <code>h3</code> now with <code>.value h3{font-size:var(--step-1)}</code> holding the same 19px. Heading levels are levels, not sizes.</div>
 <div class="meta"><b>Body copy alongside them</b><ul>
-<li>Guardian Digital Studios is an independent software studio based in Kensington, Maryland. We build mobile apps and websites, and we run what we build.</li>
-<li>Our work starts from experience. Every product begins with a problem we have run into ourselves, so we know what the software has to get right before a line of it is written. That focus is deliberate: our applications do one job thoroughly rather than several of them loosely.</li>
-<li>Commander Index is our flagship release, built for Magic: The Gathering Commander playgroups and free to everyone who uses it. It sets the standard we hold the rest of our work to.</li></ul></div>
+<li>We build mobile apps and websites, and we run what we build.</li>
+<li>Commander Index is the first: an app for <em>Magic: The Gathering</em> Commander playgroups that scores how strong a deck is, records who won, and keeps the table's life totals. It is coming to iOS and Android.</li></ul>
+<p>Two paragraphs, not three. The first deliberately does not restate the hero headline, which already names the app-plus-website pairing.</p></div>
+<div class="meta"><b>History</b>The four titles were "Built from experience", "Free, in full", "Focused by design" and "Support that responds". They were rewritten to state facts rather than judgements or promises: "Free, in full" became "No paid features", and a card promising that every message "will get a reply" became a plain "Contact" with the address. A third body paragraph about every product starting from a problem we had run into ourselves was cut. Do not reintroduce a card whose title grades our own work.</div>
 </body></html>
