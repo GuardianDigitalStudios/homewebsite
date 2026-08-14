@@ -2,11 +2,12 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Buttons and links</title><link rel="stylesheet" href="../_inventory.css"></head><body>
 <h1>Buttons and links</h1>
 <p class="lede">The site has very few interactive elements. Full list.</p>
-<div class="slot"><div class="k">Primary</div><div class="v">Currently exists in CSS but is <b>unused</b>, nothing on the site needs it today</div></div>
-<div class="slot"><div class="k">Secondary</div><div class="v">Also unused</div></div>
-<div class="slot"><div class="k">Nav link</div><div class="v">Home / About / Products, in-page anchors</div></div>
+<div class="slot"><div class="k">Primary</div><div class="v">Used twice, both <code>.btn.btn-primary</code>: the outbound product link, and "Email us about a project" in the <a href="services.html">Services</a> CTA. An earlier version of this page called it unused; it was already wrong then, the product card has carried one since.</div></div>
+<div class="slot"><div class="k">Secondary</div><div class="v">Bare <code>.btn</code> with no modifier. Exists in CSS, still <b>unused</b>. Nothing on the site needs a second tier yet.</div></div>
+<div class="slot"><div class="k">Nav link</div><div class="v">Home / About / Services / Products, in-page anchors</div></div>
 <div class="slot"><div class="k">Footer link</div><div class="v">Same targets plus the two legal pages</div></div>
-<div class="slot"><div class="k">Outbound</div><div class="v">commander-index.com ↗, the only external link and the only real conversion on the site</div></div>
-<div class="slot"><div class="k">Contact</div><div class="v">mailto: and tel: links in the legal contact blocks</div></div>
-<div class="meta"><b>Worth questioning</b>If the studio site is meant to send people to the product, one outbound text link inside a chip row is doing that job alone. That is a design decision, not a constraint.</div>
+<div class="slot"><div class="k">Outbound</div><div class="v">commander-index.com ↗, the only external link on the site</div></div>
+<div class="slot"><div class="k">Contact</div><div class="v">mailto: in value card 04 and the Services CTA; mailto: and tel: in the legal contact blocks</div></div>
+<div class="meta warn"><b>A pill button must never be labelled with the contact address</b>44px of horizontal padding plus 240px of unbreakable address plus <code>.page</code>'s 48px is 332px, so it scrolls the page sideways on a small phone. Label with several short words, which wrap at a space. Recorded in full on <a href="services.html">Services</a>.</div>
+<div class="meta"><b>Worth questioning</b>The two primaries now compete: one sends people to the product, one asks for client work. They sit in adjacent sections and look identical. If Services is the commercial priority, its CTA should not be the visual equal of a product link.</div>
 </body></html>

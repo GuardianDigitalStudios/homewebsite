@@ -22,10 +22,22 @@ cannot serve both, measured, the light-page muted colour hit 2.70:1 on the dark
 footer, and the dark-footer one hit 2.90:1 on the page.</li></ul></div>
 
 <div class="meta"><b>Fonts</b>
-Loaded from Google Fonts, which the CSP explicitly allows
+Two webfonts, <b>Newsreader</b> (display) and <b>IBM Plex Mono</b> (mono), from
+Google Fonts, which the CSP explicitly allows
 (<code>style-src … fonts.googleapis.com</code>, <code>font-src … fonts.gstatic.com</code>).
-Currently Outfit and JetBrains Mono. A different family is fine; a
-self-hosted or third-party CDN font needs the CSP updated with it.</div>
+An earlier version of this page named Outfit and JetBrains Mono; those are not
+what ships.
+<ul><li><b>Body text is not a webfont.</b> <code>--font-body</code> is a system
+stack, <code>'Helvetica Neue', Helvetica, Arial, sans-serif</code>. Most of the
+page's words therefore need no network request at all.</li>
+<li>A different family is fine; a self-hosted or third-party CDN font needs the
+CSP updated with it.</li>
+<li>They load from a <code>&lt;link rel="stylesheet"&gt;</code> in each page's
+head, and <b>must not</b> go back to an <code>@import</code> in
+<code>styles.css</code>. An <code>@import</code> there cannot be discovered until
+that file has itself been fetched and parsed, which left the font request a full
+round trip behind the two <code>preconnect</code> hints that exist to warm it.
+The <code>&lt;link&gt;</code> is found in the head's first parse.</li></ul></div>
 
 <div class="meta"><b>Hosting</b>
 Static files on Cloudflare Pages. No build step, no framework, plain HTML, one

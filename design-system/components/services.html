@@ -1,0 +1,18 @@
+<!-- @dsCard group="Components" -->
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Services</title><link rel="stylesheet" href="../_inventory.css"></head><body>
+<h1>Services</h1>
+<p class="lede">index.html only, between About and Products. Three cards and the one place on the site that asks for work. This is client work, not a description of our own products &mdash; Products below it is that.</p>
+<table><tr><th>Title</th><th>Body</th></tr>
+<tr><td>Websites</td><td>Design and build, from one page to a full site. Hand-written HTML and CSS, no framework and no build step.</td></tr>
+<tr><td>Mobile apps</td><td>iOS and Android from a single Flutter codebase, from the first sketch through to the store listing.</td></tr>
+<tr><td>Maintenance and hosting</td><td>Updates, fixes, hosting and the domain. Available on its own for a site or app someone else built.</td></tr></table>
+<h2>The ask</h2>
+<div class="slot"><div class="k">Heading</div><div class="v">Start a project</div></div>
+<div class="slot"><div class="k">Body</div><div class="v">Tell us what you need and what it is for. Project enquiries go to hello@guardiandigitalstudios.com.</div></div>
+<div class="slot"><div class="k">Button</div><div class="v">"Email us about a project" &mdash; <code>.btn.btn-primary</code>, <code>mailto:</code> with <code>?subject=Project enquiry</code></div></div>
+<div class="meta warn"><b>The button label must not be the address</b>It says "Email us about a project" and not <code>hello@guardiandigitalstudios.com</code> on purpose. The address is 240px of text with no break opportunity; inside a pill with 44px of horizontal padding it needs 284px, and with <code>.page</code>'s 48px it needs 332px, so a bare-address label scrolls the page sideways under 332px. Several short words wrap at a space and set no floor. Same failure as the card 04 min-content trap in <a href="value-cards.html">value cards</a>.
+<p><code>overflow-wrap:anywhere</code> on <code>.cta</code> covers the address where it appears as running text in the body line.</p></div>
+<div class="meta"><b>Why mailto and not a form</b>The site is static on Cloudflare Pages with no backend, and the CSP sets <code>form-action 'self'</code>. A real enquiry form needs a Pages Function or Worker to receive the POST plus spam handling, which is a backend in a repo that deliberately has none. <code>mailto:</code> costs nothing and works today. If a form is ever wanted, that is the trade being made.</div>
+<div class="meta"><b>No breakpoint of its own</b><code>.services</code> is <code>repeat(auto-fit,minmax(min(240px,100%),1fr))</code>, so it drops 3 &rarr; 2 &rarr; 1 on available space alone. The <code>min(240px,100%)</code> is load-bearing: a bare <code>minmax(240px,1fr)</code> cannot shrink below 240px and overflows on a narrow viewport.</div>
+<div class="meta"><b>This is the site's first real call to action</b>Before this section the studio sold nothing directly, and the only conversion anywhere was the outbound link to commander-index.com. The notes on <a href="hero.html">hero</a> and <a href="buttons.html">buttons</a> that said so have been corrected. The hero still has no CTA of its own, which is still deliberate.</div>
+</body></html>
