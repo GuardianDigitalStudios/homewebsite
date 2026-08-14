@@ -7,20 +7,30 @@
      The two legal URLs are extensionless. Cloudflare Pages 308s /foo.html to
      /foo, so the .html form these carried at first was a redirect, which is
      the same fault one line up. The pages still LINK to each other as .html;
-     only the canonical, og:url and these entries name the settled URL. -->
+     only the canonical, og:url and these entries name the settled URL.
+
+     lastmod is the only one of the three optional tags here that Google
+     actually uses; changefreq and priority are ignored, and are kept only
+     because other crawlers read them. It is used ONLY while it stays honest:
+     a lastmod that moves on every deploy, or that claims a date the content
+     did not change on, gets discounted and then disregarded. Update it when
+     the page's visible copy changes, not when a comment or a stylesheet does. -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://guardiandigitalstudios.com/</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://guardiandigitalstudios.com/privacy-policy</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://guardiandigitalstudios.com/terms-of-service</loc>
+    <lastmod>2026-08-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
