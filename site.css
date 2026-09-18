@@ -68,6 +68,8 @@ nav > div{max-width:var(--page);margin:0 auto;padding:var(--s4) var(--s5)}
 .card.mint{background:var(--mint-100)}
 .card.navy{background:var(--navy);color:#fff;padding:var(--s7)}
 .card > .row{justify-self:stretch}
+.card.feature{margin-top:var(--s5);gap:var(--s5)}
+.shot{width:100%;border-radius:var(--r-md);border:1px solid var(--border)}
 .card.navy h2{margin-bottom:var(--s3)}
 .card.navy p{color:var(--blue-200);font-size:var(--t-lg)}
 .chip{display:inline-flex;font:800 var(--t-xs)/1 var(--font-body);letter-spacing:.02em;padding:8px 14px;border-radius:var(--r-pill);background:var(--blue-100);color:var(--blue-700)}
