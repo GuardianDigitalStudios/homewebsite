@@ -48,6 +48,7 @@ section > h2{margin-bottom:var(--s6)}
 .hero{padding:calc(var(--s10) - var(--s9)) 0 0}
 .hero h1{font-size:var(--t-4xl);max-width:14ch}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--s5)}
+@media (min-width:1000px){.grid.values{grid-template-columns:repeat(5,1fr);gap:var(--s4)}.grid.values .card{padding:var(--s5) var(--s4)}.grid.values h3{font-size:var(--t-lg)}}
 .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--s5)}
 
 /* Nav */
